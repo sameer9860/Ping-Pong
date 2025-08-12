@@ -4,6 +4,31 @@
     <meta charset="UTF-8">
     <title>Simple Pong Game</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #game-container {
+            margin: 20px auto;
+            width: 800px;
+            height: 400px;
+            position: relative;
+        }
+        canvas {
+            border: 1px solid black;
+        }
+        #score-container {
+            margin-bottom: 10px;
+        }
+        #score-container p {
+            display: inline-block;
+            margin: 0 20px;
+            font-size: 18px;
+        }
+    </style>
+   
 </head>
 <body>
     <h1>Simple Pong Game</h1>
@@ -17,9 +42,31 @@
         <p id="ai-score">AI Score: 0</p>
     </div>
 
+
+    
     <div id="game-container">
         <canvas id="pongCanvas" width="800" height="400"></canvas>
     </div>
     <script src="pong.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('pongCanvas');
+            const ctx = canvas.getContext('2d');
+            let playerScore = 0;
+            let aiScore = 0;
+
+            // Game logic goes here
+            // ...
+
+            // Update scores
+            function updateScores() {
+                document.getElementById('player-score').textContent = `Player Score: ${playerScore}`;
+                document.getElementById('ai-score').textContent = `AI Score: ${aiScore}`;
+            }
+
+            // Call updateScores whenever the score changes
+        });  
+    </script>   
 </body>
 </html>
